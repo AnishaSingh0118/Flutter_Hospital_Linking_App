@@ -1,0 +1,293 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/src/rendering/box.dart';
+import 'package:hospital/screens/scearch_screen.dart';
+
+class Home_Screeen extends StatefulWidget {
+  const Home_Screeen({super.key});
+
+  @override
+  State<Home_Screeen> createState() => _Home_ScreeenState();
+}
+
+class _Home_ScreeenState extends State<Home_Screeen> {
+  final String _greating = "GoodMorning!";
+
+  final String _username = "UserName";
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(top: 60.0, right: 150.0),
+                child: Container(
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 5,
+                        color: Color.fromARGB(255, 163, 154, 154),
+                        spreadRadius: 2,
+                        offset: const Offset(1, 4),
+                      ),
+                    ],
+                  ),
+                  child: const CircleAvatar(
+                    radius: 65.0,
+                    backgroundImage: AssetImage('assest/images/logo.jpeg'),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              SizedBox(
+                height: 30.0,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 100.0),
+                child: Text(
+                  _greating,
+                  style: TextStyle(
+                    fontSize: 25.0,
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 100.0, top: 10.0),
+                child: Text(
+                  _username,
+                  style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 50.0,
+          ),
+          Expanded(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: SizedBox(
+                    width: 300.0,
+                    height: 60.0,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor: MaterialStatePropertyAll<Color>(
+                              Color.fromARGB(255, 193, 227, 238)),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25)),
+                          )),
+                      onPressed: () {
+                        GotoSearchcreen();
+                      },
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.search,
+                            color: Colors.black,
+                          ),
+                          SizedBox(
+                            width: 15.0,
+                          ),
+                          Text(
+                            'Search the Hospitals',
+                            style: TextStyle(
+                                color: Color.fromARGB(255, 139, 136, 136),
+                                fontSize: 20.0),
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 40.0,
+                ),
+                Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 30.0),
+                      child: Text('Most Popular',
+                          style: TextStyle(
+                            fontSize: 30.0,
+                            fontWeight: FontWeight.bold,
+                          )),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0),
+                            color: Color.fromARGB(255, 221, 116, 116),
+                          ),
+                          width: 140.0,
+                          height: 160.0,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: CircleAvatar(
+                                  radius: 40.0,
+                                  backgroundImage: AssetImage(
+                                    'assest/images/heart.jpeg',
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                'Cardiology',
+                                style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  '42 Hospitals ',
+                                  style: TextStyle(
+                                      fontSize: 12.0, color: Colors.white),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          width: 140.0,
+                          height: 160.0,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: CircleAvatar(
+                                  radius: 40.0,
+                                  backgroundImage: AssetImage(
+                                    'assest/images/lung.jpeg',
+                                  ),
+                                ),
+                              ),
+                              Text(
+                                'Transplant',
+                                style: TextStyle(
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text(
+                                  '23 Hospitals ',
+                                  style: TextStyle(
+                                      fontSize: 12.0, color: Colors.white),
+                                ),
+                              )
+                            ],
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20.0),
+                            color: Color.fromARGB(255, 156, 245, 133),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 30.0,
+                    )
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                      width: 320.0,
+                      height: 120.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25.0),
+                        color: Color.fromARGB(255, 198, 212, 219),
+                      ),
+                      child: Row(
+                        children: [
+                          Column(
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(top: 15.0, left: 2.0),
+                                child: CircleAvatar(
+                                    radius: 40,
+                                    backgroundImage:
+                                        AssetImage('assest/images/helth.jpeg')),
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                left: 15, right: 15.0, top: 15.0),
+                            child: Column(
+                              children: [
+                                Text('Appolo'),
+                                Text('General\nHospitals,\n'),
+                                Row(
+                                  children: [
+                                    Text('Rating'),
+                                    Icon(
+                                      Icons.star_border,
+                                      size: 20.0,
+                                      color: Colors.yellowAccent,
+                                    ),
+                                    Icon(
+                                      Icons.star_border,
+                                      size: 20.0,
+                                      color: Colors.yellowAccent,
+                                    ),
+                                    Icon(
+                                      Icons.star_border,
+                                      size: 20.0,
+                                      color: Colors.yellowAccent,
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15.0)),
+                            width: 90.0,
+                            height: 100,
+                            child: Image.asset('assest/images/grap.jpeg'),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void GotoSearchcreen() {
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (context) => Search_Screen(),
+    ));
+  }
+}
